@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Email Sender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            color: black;
+        }
+        input, button {
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .email-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .email-input {
+            width: 48%;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Bulk Email Sender</h2>
+        <p>Enter up to 10 email addresses (leave blank if not needed)</p>
+
+        <form action="mailto:?subject=Fast & Reliable Drug & Alcohol Testing for SAP Clients&body=Are you a Substance Abuse Professional (SAP) looking for a trusted Third-Party Administrator (TPA) for your clients’ DOT and NON-DOT drug and alcohol tests?%0D%0A%0D%0A
+        At Longview Screening Solutions, we specialize in handling all testing needs quickly and efficiently, including:%0D%0A
+        ✔ DOT and NON-DOT Drug & Alcohol Testing%0D%0A
+        ✔ Return to Duty (RTD) Step 5 Testing%0D%0A
+        ✔ Breath Alcohol Testing%0D%0A
+        ✔ Lab-Based Testing%0D%0A
+        ✔ Fast Turnaround – Results in 1-2 Days%0D%0A%0D%0A
+        We provide real-time tracking of each test, from collection to MRO review, ensuring no delays in the SAP process. As both a SAP and a TPA, we eliminate unnecessary wait times, helping clients return to work faster.%0D%0A%0D%0A
+        📍 Longview Screening Solutions%0D%0A
+        📞 903-445-8953%0D%0A
+        📧 info@longviewscreeningsolutions.org%0D%0A
+        🔗 Visit Our Website: https://www.longviewscreeningsolutions.org%0D%0A%0D%0A
+        Ensure your SAP clients complete their RTD process smoothly. We’re here to help!" method="get" enctype="text/plain">
+
+            <div class="email-container">
+                <input type="email" name="to" class="email-input" placeholder="Email 1">
+                <input type="email" name="to" class="email-input" placeholder="Email 2">
+                <input type="email" name="to" class="email-input" placeholder="Email 3">
+                <input type="email" name="to" class="email-input" placeholder="Email 4">
+                <input type="email" name="to" class="email-input" placeholder="Email 5">
+                <input type="email" name="to" class="email-input" placeholder="Email 6">
+                <input type="email" name="to" class="email-input" placeholder="Email 7">
+                <input type="email" name="to" class="email-input" placeholder="Email 8">
+                <input type="email" name="to" class="email-input" placeholder="Email 9">
+                <input type="email" name="to" class="email-input" placeholder="Email 10">
+            </div>
+
+            <button type="submit">Send Emails</button>
+        </form>
+    </div>
+
+</body>
+</html>
