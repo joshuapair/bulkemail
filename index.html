@@ -22,30 +22,35 @@
             color: black;
         }
         input, button {
-            width: 100%;
+            width: 70%;
             margin: 5px 0;
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        button {
+        .send-button {
             background: #007bff;
             color: white;
             border: none;
             cursor: pointer;
+            padding: 10px;
+            width: 25%;
+            font-size: 16px;
+            margin-left: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
-        button:hover {
+        .send-button:hover {
             background: #0056b3;
         }
         .email-container {
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: space-between;
-        }
-        .email-input {
-            width: 48%;
-            margin: 5px 0;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -53,38 +58,81 @@
 
     <div class="container">
         <h2>Bulk Email Sender</h2>
-        <p>Enter up to 10 email addresses (leave blank if not needed)</p>
+        <p>Enter up to 10 email addresses and click "Send Email" for each</p>
 
-        <form action="mailto:?subject=Fast & Reliable Drug & Alcohol Testing for SAP Clients&body=Are you a Substance Abuse Professional (SAP) looking for a trusted Third-Party Administrator (TPA) for your clients’ DOT and NON-DOT drug and alcohol tests?%0D%0A%0D%0A
-        At Longview Screening Solutions, we specialize in handling all testing needs quickly and efficiently, including:%0D%0A
-        ✔ DOT and NON-DOT Drug & Alcohol Testing%0D%0A
-        ✔ Return to Duty (RTD) Step 5 Testing%0D%0A
-        ✔ Breath Alcohol Testing%0D%0A
-        ✔ Lab-Based Testing%0D%0A
-        ✔ Fast Turnaround – Results in 1-2 Days%0D%0A%0D%0A
-        We provide real-time tracking of each test, from collection to MRO review, ensuring no delays in the SAP process. As both a SAP and a TPA, we eliminate unnecessary wait times, helping clients return to work faster.%0D%0A%0D%0A
-        📍 Longview Screening Solutions%0D%0A
-        📞 903-445-8953%0D%0A
-        📧 info@longviewscreeningsolutions.org%0D%0A
-        🔗 Visit Our Website: https://www.longviewscreeningsolutions.org%0D%0A%0D%0A
-        Ensure your SAP clients complete their RTD process smoothly. We’re here to help!" method="get" enctype="text/plain">
+        <div class="email-container">
+            <input type="email" id="email1" placeholder="Email 1">
+            <button class="send-button" onclick="sendEmail(1)">Send Email</button>
+        </div>
+        <div class="email-container">
+            <input type="email" id="email2" placeholder="Email 2">
+            <button class="send-button" onclick="sendEmail(2)">Send Email</button>
+        </div>
+        <div class="email-container">
+            <input type="email" id="email3" placeholder="Email 3">
+            <button class="send-button" onclick="sendEmail(3)">Send Email</button>
+        </div>
+        <div class="email-container">
+            <input type="email" id="email4" placeholder="Email 4">
+            <button class="send-button" onclick="sendEmail(4)">Send Email</button>
+        </div>
+        <div class="email-container">
+            <input type="email" id="email5" placeholder="Email 5">
+            <button class="send-button" onclick="sendEmail(5)">Send Email</button>
+        </div>
+        <div class="email-container">
+            <input type="email" id="email6" placeholder="Email 6">
+            <button class="send-button" onclick="sendEmail(6)">Send Email</button>
+        </div>
+        <div class="email-container">
+            <input type="email" id="email7" placeholder="Email 7">
+            <button class="send-button" onclick="sendEmail(7)">Send Email</button>
+        </div>
+        <div class="email-container">
+            <input type="email" id="email8" placeholder="Email 8">
+            <button class="send-button" onclick="sendEmail(8)">Send Email</button>
+        </div>
+        <div class="email-container">
+            <input type="email" id="email9" placeholder="Email 9">
+            <button class="send-button" onclick="sendEmail(9)">Send Email</button>
+        </div>
+        <div class="email-container">
+            <input type="email" id="email10" placeholder="Email 10">
+            <button class="send-button" onclick="sendEmail(10)">Send Email</button>
+        </div>
 
-            <div class="email-container">
-                <input type="email" name="to" class="email-input" placeholder="Email 1">
-                <input type="email" name="to" class="email-input" placeholder="Email 2">
-                <input type="email" name="to" class="email-input" placeholder="Email 3">
-                <input type="email" name="to" class="email-input" placeholder="Email 4">
-                <input type="email" name="to" class="email-input" placeholder="Email 5">
-                <input type="email" name="to" class="email-input" placeholder="Email 6">
-                <input type="email" name="to" class="email-input" placeholder="Email 7">
-                <input type="email" name="to" class="email-input" placeholder="Email 8">
-                <input type="email" name="to" class="email-input" placeholder="Email 9">
-                <input type="email" name="to" class="email-input" placeholder="Email 10">
-            </div>
-
-            <button type="submit">Send Emails</button>
-        </form>
     </div>
+
+    <script>
+        function sendEmail(index) {
+            let emailInput = document.getElementById("email" + index);
+            let email = emailInput.value.trim();
+
+            if (!email) {
+                alert("Please enter an email address.");
+                return;
+            }
+
+            let subject = encodeURIComponent("Fast & Reliable Drug & Alcohol Testing for SAP Clients");
+            let body = encodeURIComponent(`Are you a Substance Abuse Professional (SAP) looking for a trusted Third-Party Administrator (TPA) for your clients’ DOT and NON-DOT drug and alcohol tests?\n\n
+At Longview Screening Solutions, we specialize in handling all testing needs quickly and efficiently, including:\n
+✔ DOT and NON-DOT Drug & Alcohol Testing\n
+✔ Return to Duty (RTD) Step 5 Testing\n
+✔ Breath Alcohol Testing\n
+✔ Lab-Based Testing\n
+✔ Fast Turnaround – Results in 1-2 Days\n\n
+We provide real-time tracking of each test, from collection to MRO review, ensuring no delays in the SAP process. As both a SAP and a TPA, we eliminate unnecessary wait times, helping clients return to work faster.\n\n
+📍 Longview Screening Solutions\n
+📞 903-445-8953\n
+📧 info@longviewscreeningsolutions.org\n
+🔗 Visit Our Website: https://www.longviewscreeningsolutions.org\n\n
+Ensure your SAP clients complete their RTD process smoothly. We’re here to help!`);
+
+            let mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+
+            window.location.href = mailtoLink;
+        }
+    </script>
 
 </body>
 </html>
